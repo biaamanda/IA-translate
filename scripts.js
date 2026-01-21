@@ -14,6 +14,8 @@ async function translate() {
   let data = await response.json();
 
   translatedText.textContent = data.responseData.translatedText;
+
+  console.log(data);
 }
 
 function microphone() {
