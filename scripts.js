@@ -6,7 +6,7 @@ async function translate() {
   let url =
     "https://api.mymemory.translated.net/get?q=" +
     typedTexted.value +
-    "&langpair=pt|" +
+    "&langpair=pt-BR|" +
     idiome.value;
 
   let response = await fetch(url);
@@ -14,8 +14,6 @@ async function translate() {
   let data = await response.json();
 
   translatedText.textContent = data.responseData.translatedText;
-
-  console.log(data);
 }
 
 function microphone() {
@@ -23,7 +21,7 @@ function microphone() {
 
   let recognition = new speech();
 
-  recognition.lang = "pt";
+  recognition.lang = "pt-BR";
 
   recognition.onresult = (event) => {
     let spokenText = event.results[0][0].transcript;
